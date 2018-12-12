@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Bank deposit growth</title>
+    <style>
+        body
+        {
+            margin-left: 20px;
+        }
+        h1
+        {
+            color:orange;
+        }
+        table, th, td
+        {
+            border: 1px solid black;
+        }
+        td, th {
+            padding-right:20px;
+            padding-left:20px;
+        }
+        th {
+            background-color: silver;
+        }
+        label {
+            width: 200px;
+            margin: 5px;
+            display: inline-block;
+        }
+    </style>
+
+    <script>
+        /* This function calculates the value of a deposit for a given initial deposit,
+        annual interest rate, and number of years. */
+        function depositGrowth() {
+            var S, p, n;
+            var year, total;
+            var result;
+
+            S = Number(document.getElementById("deposit").value);
+            p = Number(document.getElementById("interest").value);
+            n = Number(document.getElementById("time").value);
+
+            //This builds HTML table
+            result = "<table><tr><th>Year</th><th>Deposit (€)</th></tr>";
+            year = 1;
+            while(year <= n) {
+                total = S * Math.pow(1 + p/100, year);
+                result = result + "<tr><td>" + year + "</td><td>" + total.toFixed(2) + "</td></tr>";
+                year = year + 1;
+            }
+            result = result + "</table>";
+            document.getElementById("results").innerHTML = result;
+        }
+    </script>
+
+</head>
+
+<body>
+
+<h1>Bank deposit growth</h1>
+
+<p>
+    <label>Initial deposit (€):</label><input type="text" id="deposit"><br>
+    <label>Annual interest rate (%):</label><input type="text" id="interest"><br>
+    <label>Deposit time in years:</label><input type="text" id="time">
+<p><input type="button" value="Calculate" onclick="depositGrowth()"></p>
+<p id="results"></p>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hw3.2</title>
+    
+    <script>
+
+        function init() {
+
+            var arr = ["b","a","c","f","d"];
+            var a1 = [4,3,200,1000,6,0];
+           var b = arr.sort();
+           var c = a1.sort(function (a, b) {return a -b  });
+
+
+            document.getElementById("result").innerHTML = b;
+            document.getElementById("result1").innerHTML = c;
+
+        }
+      /*  for (i=1;i<arrStr.length;i++){
+            tmp = arrStr[i];
+            var j=i-1;
+            while ((j>0) && (arrStr[j]> tmp)){
+                arrStr[j+1]=arrStr[j];
+                j--;
+
+            }
+
+            arrStr[j+1]=tmp;
+
+
+
+
+        }*/
+        /*for (i=1;i<arrStr.length;i++){
+
+            tmp = arrStr[i];
+
+            for (var j=i-1;j<arrStr.length;j--){
+                if ((j>0)&&(arrStr[j]>tmp)){
+                    arrStr[j+1] = arrStr[j];
+                    // result[count] = arrStr[j+1];
+
+                }
+
+            }
+        }*/
+
+        function exchange(a,b) {
+            var tmp;
+
+           tmp=a;
+            a=b;
+            b=tmp;
+
+            return a + ", " + b;
+
+        }
+
+        function sortString(arrStr) {
+
+
+            var i,j;
+            var tmp;
+            var result ="";
+            var count =0;
+
+            for (i=0;i<arrStr.length-1;i++){
+
+                for(j=1;j<arrStr.length;j++){
+
+                    if (arrStr[i]>arrStr[j]){
+                      tmp=  exchange(arrStr[i],arrStr[j])
+                        result += tmp + ", ";
+                    }
+else {
+                        result+= arrStr[i]+", ";
+                    }
+
+                    }
+
+                }
+            result+= tmp;
+
+            return result;}
+
+
+
+        window.onload = init;
+    </script>
+</head>
+<body>
+<p id="result"></p>
+<p id="result1"></p>
+</body>
+</html>

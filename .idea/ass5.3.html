@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Array example</title>
+
+    <script>
+
+        //Global varaibles
+        var values = []; //an array for the numbers
+        var count = 0; //the number of the elements
+
+        //This function inserts a new value into the array
+        function insert() {
+            values[count] = Number(document.getElementById("val").value);
+            count = count + 1;
+            document.getElementById("result1").innerHTML = "Values in the array: " + values;
+            //document.getElementById("result2").innerHTML = "";
+        }
+
+        //This function prints all the values in the array and their indexes
+        function display() {
+            var i, result = "<table><tr><th>Index</th><th>Value</th></tr>";
+            for(i = 0; i < values.length; i++) {
+                result = result + "<tr><td>" + i + "</td><td>" + values[i] + "</td></tr>";
+            }
+            result = result + "</table>";
+            document.getElementById("result2").innerHTML = result;
+        }
+
+    </script>
+</head>
+
+
+<body>
+<h1>Array example</h1>
+
+You can insert a new value into the array using the Insert button.
+<p>
+    You can display the all the values styled as a table using the Display button.
+<p>
+
+    New value: <input id="val" type="text">
+    <input type="button" value="Insert" onclick="insert()">
+    <input type="button" value="Display" onclick="display()">
+
+</p>
+
+<p id="result1"></p>
+<p id="result2"></p>
+
+</body>
+</html>

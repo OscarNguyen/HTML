@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ass4.1</title>
+<script>
+    function whileSum(){
+        var s,e;
+        var sum = 0;
+        var result = "";
+
+        s = Number(prompt("Input the start"));
+        e = Number(prompt("Input the end"));
+
+        var i = s;
+
+        while (i<=e){
+        sum+=i;
+        result+= i + "<br>";
+
+        document.getElementById("result").innerHTML = result;
+        i++;
+
+        }
+
+        result+= "The sum is: " + sum;
+        document.getElementById("result").innerHTML = result;
+
+    }
+
+    function forSum(){
+        var s,e,i;
+        var sum = 0;
+        var result = "";
+
+        s = Number(prompt("Input the start"));
+        e = Number(prompt("Input the end"));
+
+
+
+        for(i=s; i <=e; i++){
+            sum+=i;
+            result+=i + "<br>";
+
+            document.getElementById("result1").innerHTML = result;
+
+        }
+
+        result+= "The sum is " + sum;
+        document.getElementById("result1").innerHTML = result;
+
+    }
+
+</script>
+
+</head>
+<body>
+<input type="button" value="Wo" onclick="whileSum()">
+<p id="result"></p>
+<p></p>
+
+<input type="button" value="fo" onclick="forSum()">
+<p id="result1"></p>
+</body>
+</html>

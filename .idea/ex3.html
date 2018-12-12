@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Total Price of An Order</title>
+    <script>
+
+        function priceOfOrder () {
+
+            var p,q,result,d;
+
+            p = Number(document.getElementById("price").value);
+            q = Number(document.getElementById("quantity").value);
+
+            if (isNaN(p)|| p<=0){
+                alert("Error: price must be number and greater than 0");
+                return;
+            }
+
+            if (q<20){
+                document.getElementById("message").innerHTML="No discount";
+                result = p*q;
+            }
+            else if ((q>=20)&&(q<50)){
+                result = (1-0.1)*p*q;
+            }
+            else if ((q>=50) && (q<100)){
+                result = (1-0.2)*p*q;
+            }
+
+            else if (q>=100){
+                result = (1-0.3)*p*q;
+            }
+                document.getElementById("totalPrice").value = result;
+
+        }
+    </script>
+</head>
+<body>
+<p> Input the price </p>
+
+Price : <input id="price" type="text">
+<p> Input the quantity </p>
+Quantity: <input id="quantity" type="text"> <p>
+
+<input type="button" value="Calculate" onclick="priceOfOrder()">
+<input id="totalPrice" disabled >
+<p id="message"></p>
+</body>
+</html>

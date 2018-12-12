@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hw3.1</title>
+
+    <script>
+        var values = [];
+
+        var lim1, lim2;
+        var index=0;
+        function insert() {
+
+                values[index] = Number(document.getElementById("value").value);
+                index++;
+
+
+
+            document.getElementById("values").innerHTML = "Observation values: " + values;
+
+        }
+
+
+
+
+
+
+        function classLim() {
+
+            var i;
+            var result = "";
+            var result1="";
+            var result2="";
+            var count = 0;
+            var count1=0;
+            var count2=0;
+            lim1 = Number(document.getElementById("lim1").value);
+            lim2 = Number(document.getElementById("lim2").value);
+
+            for (i = 0; i < values.length; i++) {
+                if (values[i] < lim1) {
+                    result += "<br>" + values[i];
+                    count++;
+
+                    document.getElementById("result").innerHTML = "Less than " + lim1 + ": " + result;
+                    document.getElementById("count").innerHTML = "Count: " + count;
+                }
+
+
+                if ((values[i] > lim1) && (values[i] < lim2)) {
+                    result1 += "<br>" + values[i];
+                    count1++;
+
+                    document.getElementById("result1").innerHTML = "Between " + lim1 + " and " + lim2 + ": " + result1;
+                    document.getElementById("count1").innerHTML = "Count: " + count1;
+                }
+
+
+                if (values[i] > lim2) {
+                    result2 += "<br>" + values[i];
+                    count2++;
+
+                    document.getElementById("result2").innerHTML = "Greater than " + lim2 + ": " + result2;
+                    document.getElementById("count2").innerHTML = "Count: " + count2;
+                }
+
+
+            }
+        }
+
+
+
+
+
+       // window.onload = init;
+
+    </script>
+</head>
+<body>
+Insert values: <input id="value" type="text">
+<input type="button" value="insert" onclick="insert()">
+<p id="values"></p><p></p>
+
+Lim1: <input id="lim1" type="text">
+Lim2: <input id="lim2" type="text">
+<input type="button" value="classify" onclick="classLim()">
+<p id="result"></p>
+<p id="count"></p>
+
+<p id="result1"></p>
+<p id="count1"></p>
+
+<p id="result2"></p>
+<p id="count2"></p>
+
+</body>
+</html>

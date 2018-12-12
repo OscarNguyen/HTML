@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sum of nums</title>
+
+    <script>
+
+        function sumOfNums() {
+            var sum = 0;
+            var num;
+            var output="";
+            var count=0;
+
+            num = Number(prompt("Input the number (excluding 0)","0"));
+
+            while (num!=0){
+                sum += num;
+                count+=1;
+                output += num;
+                document.getElementById("result").innerHTML = output;
+                num = Number(prompt("Input the number (excluding 0)","0"));
+            }
+
+                output = output +"sum is"+ sum +"<br>" + "the count is: " + count + "<br>" + "the avg is "+ (sum/count).toFixed(2);
+                document.getElementById("result").innerHTML = output;
+
+
+        }
+
+    </script>
+</head>
+<body>
+
+<input type="button" value="quat" onclick="sumOfNums()">
+
+<p id ="result">
+</body>
+</html>

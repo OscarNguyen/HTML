@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hw2.1</title>
+
+    <script>
+
+        function rollDice1() {
+
+            var t,n,i;
+            var sum=0;
+            var output="";
+            var output1="";
+
+            t = Number(prompt("Input the times: "));
+
+            for (i=1;i<=t;i++){
+                n = Math.floor(Math.random()*6)+1;
+                sum+=n;
+                output+="<br>"+ n  ;
+
+                document.getElementById("scores").innerHTML= "scores: " + output;
+            }
+
+            output1+= "sum is: " + sum;
+            document.getElementById("totalscores").innerHTML = output1;
+
+        }
+
+        function rollDice2() {
+
+            var n;
+            var count=1;
+            var output="";
+
+            n = Math.floor(Math.random()*6)+1;
+
+            while (n<6){
+
+                output+="<br>"+n;
+
+
+                document.getElementById("scores2").innerHTML = "Scores are: " + output;
+                n = Math.floor(Math.random()*6)+1;
+                count++;
+
+            }
+            output+="<br>" + n;
+            //count+=count;
+            document.getElementById("scores2").innerHTML ="Scores are: " + output;
+            document.getElementById("count").innerHTML = "Rolls are: "+ count;
+        }
+
+        function rollDice3() {
+            var n;
+            var output="";
+            var temp=0;
+
+            n = Math.floor(Math.random()*6)+1;
+
+            while (n!=temp){
+                temp = n;
+                output+="<br>"+n;
+
+                n = Math.floor(Math.random()*6)+1;
+
+                document.getElementById("score3").innerHTML = "scores are: " + output;
+
+            }
+
+            output+="<br>"+n;
+            document.getElementById("score3").innerHTML = "scores are: " + output;
+
+
+        }
+
+        function rollDice4() {
+
+            var n1,n2;
+            var output1="";
+            var output2="";
+
+            n1 = Math.floor(Math.random()*6)+1;
+            n2 = Math.floor(Math.random()*6)+1;
+
+            while (n1!=n2){
+
+                output1+="<br>"+ n1;
+                output2+="<br>"+ n2;
+
+                n1 = Math.floor(Math.random()*6)+1;
+                n2 = Math.floor(Math.random()*6)+1;
+
+                document.getElementById("scoren1").innerHTML = "score of 1: " + output1;
+                document.getElementById("scoren2").innerHTML = "score of 2: " + output2;
+
+
+            }
+
+            output1+="<br>"+ n1;
+            output2+="<br>"+ n2;
+
+            document.getElementById("scoren1").innerHTML = "score of 1: " + output1;
+            document.getElementById("scoren2").innerHTML = "score of 2: " + output2;
+
+
+        }
+
+    </script>
+</head>
+<body>
+<input type="button" value="roll1" onclick="rollDice1()">
+<p id ="scores"></p>
+<p id="totalscores"></p>
+
+---------------------------------------------------------<p></p>
+<input type="button" value="roll2" onclick="rollDice2()">
+<p id="scores2"></p>
+<p id="count"></p>
+
+-----------------------------------------------------------<p></p>
+<input type="button" value="roll3" onclick="rollDice3()">
+<p id="score3"></p>
+
+
+
+</body>
+</html>

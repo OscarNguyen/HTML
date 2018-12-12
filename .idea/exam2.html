@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>exam2</title>
+    <script>
+        var n,g;
+        var ten = [];
+        var index = 0;
+        var grade =[];
+
+        var avg;
+
+        function giveGrade() {
+            var sumOfAvg=0;
+            var i,j;
+            var count=0;
+            n = document.getElementById("name").value;
+            g = Number(document.getElementById("grade").value);
+
+
+            if ((g>=0) && (g<=5)) {
+                ten[index] = n;
+                grade[index] = g;
+                index++;
+                document.getElementById("names").innerHTML = ten;
+                document.getElementById("grades").innerHTML = grade;
+            }
+
+                for (i = 0;i<grade.length;i++ ){
+                    sumOfAvg= sumOfAvg+grade[i];
+
+                }
+                console.log(sumOfAvg);
+                avg= sumOfAvg/(grade.length);
+                console.log(grade.length);
+
+                document.getElementById("avg").innerHTML = "Average: " + avg;
+
+        }
+
+        function search() {
+
+            var grade1, i;
+            var result="";
+            var count=0;
+
+            grade1 = Number(document.getElementById("gradeSearch").value);
+
+            for (i=0;i<grade.length;i++){
+                if (grade1 == grade[i]){
+
+                    result+="<br>" + ten[i];
+                    count++;
+
+                    document.getElementById("result").innerHTML = result;
+                    document.getElementById("count").innerHTML = "In all "+ count + " students";
+
+                }
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+<h1>Give grades</h1>
+Name: <input id="name" type="text">
+Grade: <input id="grade" type="text">
+<input type="button" value="Insert" onclick="giveGrade()">
+
+
+<p id="names"></p>
+<p id="grades"></p>
+<p id="avg"></p>
+
+<h1>Search</h1>
+
+Grade: <input id="gradeSearch" type="text">
+<input type="button" value="Search" onclick="search()">
+<p id="result"></p>
+<p id="count"></p>
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ass 4.3</title>
+    <style>
+        h1 {
+            color: aquamarine;
+        }
+        table, th, td
+        {
+            border: 1px solid black;
+        }
+        td, th {
+            padding-right:20px;
+            padding-left:20px;
+        }
+        th {
+            background-color: silver;
+        }
+        label {
+            width: 180px;
+            margin: 5px;
+            display: inline-block;
+        }
+    </style>
+    <script>
+        
+        function prepTemp() {
+            var a,x,y,t,z,z1,result;
+            var xx="";
+            var yy="";
+            var output ="";
+            var count=0;
+            var minT = Number.MAX_VALUE;
+            var x1;
+            var y1;
+            result = "<table><tr><th> x </th><th> y</th><th>Temperature </th></tr>";
+
+            a=Number(prompt("Input the quality: (from 0 to 5)"));
+
+            if ((a<0)||(a>5)){
+                alert("Wrong input");
+            }
+                else {
+
+                for (x = 1; x <= 6; x++) {
+                    for (y = 0.2; y <= 1.2; y += 0.2) {
+
+                        t = Math.abs((a * Math.pow(x, 2) * Math.pow(y, 2)) + Math.pow(6 - x, 2) + (1 - a) * (x / y));
+
+
+                        if (t < minT){
+                            minT = t;
+                            x1 = x;
+                            y1 = y;
+                        }
+
+
+                        xx+=x + "<br>";
+                        yy+=y + "<br>";
+                        output += t + "<br>";
+
+                        result+=   "<tr><td>" + x + "</td><td>" + y + "</td><td>" + t + "</td></tr>";
+                        count++;
+
+                        document.getElementById("xx").innerHTML = xx;
+                        document.getElementById("yy").innerHTML = yy;
+                        //document.getElementById("temp").innerHTML = t;
+                       // document.getElementById("result").innerHTML = output;
+                    }
+                }
+
+
+                result+= "</table>";
+
+                document.getElementById("result1").innerHTML = result;
+
+                document.getElementById("min").innerHTML = "minimum la : " + minT;
+                document.getElementById("minx").innerHTML = x1;
+                document.getElementById("miny").innerHTML = y1;
+                document.getElementById("count").innerHTML = "so count la: " + count;
+               // output += t + "<br>";
+
+                document.getElementById("result").innerHTML = output + "<br>";
+
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="Go" onclick="prepTemp()">
+<p id="count"></p>
+
+------------------
+<p id="xx"></p>
+-------------
+<p id="yy"></p>
+------------------
+<p id="result"></p>
+<p id="min"></p>
+<p id="minx"></p>
+<p id="miny"></p>
+
+
+<p id="result1"></p>
+
+</body>
+</html>
+
+

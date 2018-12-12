@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1671.1">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #e1b358; background-color: #202020}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #bf6426; background-color: #202020}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #bf6426; background-color: #202020; min-height: 14.0px}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #99a8ba; background-color: #202020}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #febb5b; background-color: #202020}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #99a8ba; background-color: #202020; min-height: 14.0px}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #95b84f; background-color: #202020}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #e1b358; background-color: #202020; min-height: 14.0px}
+    span.s1 {color: #acacac}
+    span.s2 {color: #95b84f}
+    span.s3 {color: #99a8ba}
+    span.s4 {color: #bf6426}
+    span.s5 {color: #5684ad}
+    span.s6 {color: #febb5b}
+    span.s7 {color: #587647}
+    span.s8 {color: #85609a}
+    span.s9 {color: #e1b358}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE <span class="s1">html</span>&gt;</p>
+<p class="p1">&lt;html <span class="s1">lang=</span><span class="s2">"en"</span>&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta <span class="s1">charset=</span><span class="s2">"UTF-8"</span>&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;<span class="s3">exam2</span>&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span><span class="s4"><b>var </b></span><span class="s3">n</span><span class="s4">,</span><span class="s3">g</span><span class="s4">;</span></p>
+<p class="p2"><span class="Apple-converted-space">        </span><b>var </b><span class="s3">name = []</span>;</p>
+<p class="p2"><span class="Apple-converted-space">        </span><b>var </b><span class="s3">index = </span><span class="s5">0</span>;</p>
+<p class="p2"><span class="Apple-converted-space">        </span><b>var </b><span class="s3">grade =[]</span>;</p>
+<p class="p3"><br></p>
+<p class="p2"><span class="Apple-converted-space">        </span><b>var </b><span class="s3">avg</span>;</p>
+<p class="p3"><br></p>
+<p class="p2"><span class="Apple-converted-space">        </span><b>function </b><span class="s6">giveGrade</span><span class="s3">() {</span></p>
+<p class="p4"><span class="Apple-converted-space">            </span><span class="s4"><b>var </b></span>sumOfAvg=<span class="s5">0</span><span class="s4">;</span></p>
+<p class="p2"><span class="Apple-converted-space">            </span><b>var </b><span class="s3">i</span>,<span class="s3">j</span>;</p>
+<p class="p2"><span class="Apple-converted-space">            </span><b>var </b><span class="s3">count=</span><span class="s5">0</span>;</p>
+<p class="p5"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">n = document.</span>getElementById<span class="s3">(</span><span class="s7">"name"</span><span class="s3">).</span>toString<span class="s3">()</span><span class="s4">;</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span>g = Number(document.<span class="s6">getElementById</span>(<span class="s7">"grade"</span>).<span class="s8">value</span>)<span class="s4">;</span></p>
+<p class="p3"><br></p>
+<p class="p3"><br></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span><b>if </b></span>((g&gt;=<span class="s5">0</span>) &amp;&amp; (g&lt;=<span class="s5">5</span>)) {</p>
+<p class="p4"><span class="Apple-converted-space">                </span>name[index] = n<span class="s4">;</span></p>
+<p class="p2"><span class="Apple-converted-space">                </span><span class="s3">grade[index] = g</span>;</p>
+<p class="p2"><span class="Apple-converted-space">                </span><span class="s3">index++</span>;</p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span>document.<span class="s6">getElementById</span>(<span class="s7">"names"</span>).innerHTML = name<span class="s4">;</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span>document.<span class="s6">getElementById</span>(<span class="s7">"grades"</span>).innerHTML = grade<span class="s4">;</span></p>
+<p class="p2"><span class="Apple-converted-space">            </span><span class="s3">}</span></p>
+<p class="p6"><br></p>
+<p class="p4"><span class="Apple-converted-space">                </span><span class="s4"><b>for </b></span>(i = <span class="s5">0</span><span class="s4">;</span>i&lt;grade.length<span class="s4">;</span>i++ ){</p>
+<p class="p4"><span class="Apple-converted-space">                    </span>sumOfAvg= sumOfAvg+grade[i]<span class="s4">;</span></p>
+<p class="p3"><br></p>
+<p class="p2"><span class="Apple-converted-space">                </span><span class="s3">}</span></p>
+<p class="p4"><span class="Apple-converted-space">                </span>console.<span class="s6">log</span>(sumOfAvg)<span class="s4">;</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span>avg= sumOfAvg/(grade.length)<span class="s4">;</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span>console.<span class="s6">log</span>(grade.length)<span class="s4">;</span></p>
+<p class="p3"><br></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span>document.<span class="s6">getElementById</span>(<span class="s7">"avg"</span>).innerHTML = <span class="s7">"Average: " </span>+ avg<span class="s4">;</span></p>
+<p class="p3"><br></p>
+<p class="p2"><span class="Apple-converted-space">        </span><span class="s3">}</span></p>
+<p class="p6"><br></p>
+<p class="p4"><span class="Apple-converted-space">        </span><span class="s4"><b>function </b></span><span class="s6">search</span>() {</p>
+<p class="p6"><br></p>
+<p class="p4"><span class="Apple-converted-space">            </span><span class="s4"><b>var </b></span>grade1<span class="s4">, </span>i<span class="s4">;</span></p>
+<p class="p2"><span class="Apple-converted-space">            </span><b>var </b><span class="s3">result=</span><span class="s7">""</span>;</p>
+<p class="p2"><span class="Apple-converted-space">            </span><b>var </b><span class="s3">count=</span><span class="s5">0</span>;</p>
+<p class="p3"><br></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span>grade1 = Number(document.<span class="s6">getElementById</span>(<span class="s7">"gradeSearch"</span>).<span class="s8">value</span>)<span class="s4">;</span></p>
+<p class="p3"><br></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span><b>for </b></span>(i=<span class="s5">0</span><span class="s4">;</span>i&lt;grade.length<span class="s4">;</span>i++){</p>
+<p class="p4"><span class="Apple-converted-space">                </span><span class="s4"><b>if </b></span>(grade1 == grade[i]){</p>
+<p class="p6"><br></p>
+<p class="p4"><span class="Apple-converted-space">                    </span>result+=<span class="s7">"&lt;br&gt;" </span>+ name[i]<span class="s4">;</span></p>
+<p class="p2"><span class="Apple-converted-space">                    </span><span class="s3">count++</span>;</p>
+<p class="p3"><br></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span>document.<span class="s6">getElementById</span>(<span class="s7">"result"</span>).innerHTML = result<span class="s4">;</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span>document.<span class="s6">getElementById</span>(<span class="s7">"count"</span>).innerHTML = <span class="s7">"In all "</span>+ count + <span class="s7">" students"</span><span class="s4">;</span></p>
+<p class="p3"><br></p>
+<p class="p2"><span class="Apple-converted-space">                </span><span class="s3">}</span></p>
+<p class="p4"><span class="Apple-converted-space">            </span>}</p>
+<p class="p6"><br></p>
+<p class="p4"><span class="Apple-converted-space">        </span>}</p>
+<p class="p6"><br></p>
+<p class="p1"><span class="s3"><span class="Apple-converted-space">    </span></span>&lt;/script&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p4"><span class="s9">&lt;h1&gt;</span>Give grades<span class="s9">&lt;/h1&gt;</span></p>
+<p class="p7"><span class="s3">Name: </span><span class="s9">&lt;input </span><span class="s1">id=</span>"name" <span class="s1">type=</span>"text"<span class="s9">&gt;</span></p>
+<p class="p7"><span class="s3">Grade: </span><span class="s9">&lt;input </span><span class="s1">id=</span>"grade" <span class="s1">type=</span>"text"<span class="s9">&gt;</span></p>
+<p class="p7"><span class="s9">&lt;input </span><span class="s1">type=</span>"button" <span class="s1">value=</span>"Insert" <span class="s1">onclick=</span>"<span class="s6">giveGrade</span><span class="s3">()</span>"<span class="s9">&gt;</span></p>
+<p class="p8"><br></p>
+<p class="p8"><br></p>
+<p class="p1">&lt;p <span class="s1">id=</span><span class="s2">"names"</span>&gt;&lt;/p&gt;</p>
+<p class="p1">&lt;p <span class="s1">id=</span><span class="s2">"grades"</span>&gt;&lt;/p&gt;</p>
+<p class="p1">&lt;p <span class="s1">id=</span><span class="s2">"avg"</span>&gt;&lt;/p&gt;</p>
+<p class="p8"><br></p>
+<p class="p1">&lt;h1&gt;<span class="s3">Search</span>&lt;/h1&gt;</p>
+<p class="p8"><br></p>
+<p class="p7"><span class="s3">Grade: </span><span class="s9">&lt;input </span><span class="s1">id=</span>"gradeSearch" <span class="s1">type=</span>"text"<span class="s9">&gt;</span></p>
+<p class="p7"><span class="s9">&lt;input </span><span class="s1">type=</span>"button" <span class="s1">value=</span>"Search" <span class="s1">onclick=</span>"<span class="s6">search</span><span class="s3">()</span>"<span class="s9">&gt;</span></p>
+<p class="p1">&lt;p <span class="s1">id=</span><span class="s2">"result"</span>&gt;&lt;/p&gt;</p>
+<p class="p1">&lt;p <span class="s1">id=</span><span class="s2">"count"</span>&gt;&lt;/p&gt;</p>
+<p class="p8"><br></p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>

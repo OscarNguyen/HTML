@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ass6.2</title>
+
+    <script>
+
+
+
+            var products = ["Choose","Apple iPhone 6 Plus 16GB", "Apple iPhone 4S 8GB",
+                "Apple iPhone 5s 32GB", "Doro Liberto 810", "Huawei Honor 7", "LG Neon 4G", "LG G45",
+                "Microsoft Lumia 535", "Microsoft Lumia 640", "Nokia 108", "Samsung Galaxy J5",
+                "Samsung Galaxy S5 Neo SM-G903F 16GB", "Samsung Galaxy S6 32GB", "Sony Xperia M4 Aqua"];
+            var prices = [0,799, 250, 600, 249, 399, 129, 349, 98, 139, 25, 195, 395, 599, 269];
+            var quantity = [0,10, 20, 30, 40, 50, 60, 70, 80, 90, 10, 20, 30, 40, 50];
+
+            function init() {
+
+                var i, opt;
+                var select = document.getElementById("select");
+                for (i=0;i < products.length;i++){
+
+                    opt = new Option(products[i]);
+                    select.options.add(opt);
+                }
+
+                select.onchange = display;
+
+            }
+
+            function display() {
+
+                var i = document.getElementById("select").selectedIndex;
+                var result = document.getElementById("result");
+
+                if (i>0){
+                    result.innerHTML = products[i] +"<br>" + " Price: " + prices[i] + "<br>"+ " Inventory: " + quantity[i]*prices[i];
+                }
+                else {
+                    result.innerHTML ="";
+                }
+
+            }
+
+            function maxMin(){
+
+                var min,max,i;
+                var result="";
+
+                min = Number(document.getElementById("min").value);
+                max = Number(document.getElementById("max").value);
+
+                for (i=1;i<products.length;i++){
+
+                    if ((min <= prices[i]) && (max>= prices[i])){
+                        result+= "<br>"+ products[i] + " " + prices[i] ;
+
+                        document.getElementById("result1").innerHTML= result;
+                    }
+
+                   // else {
+                       // result+= "cc";
+                        //document.getElementById("result1").innerHTML = result;
+
+                }
+
+            }
+
+            window.onload = init;
+
+
+    </script>
+</head>
+<body>
+
+<select id="select"></select>
+<p id="result"></p>
+
+------------------------------ <br>
+
+Min: <input id="min" type="text"> <p></p>
+
+Max: <input id="max" type="text"> <p></p>
+
+<input type="button" value="zo" onclick="maxMin()">
+<p id="result1"></p>
+
+</body>
+</html>

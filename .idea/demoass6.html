@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Phone book, version 2</title>
+
+    <script>
+
+        var names = ["Choose:", "Mary", "John", "Kevin", "Bill", "Carol"]; //array for names
+        var numbers = [0, 1122, 2140, 2250, 1281, 2251];   //array for numbers
+
+        //Function initializes the select element
+        function init() {
+            var i, opt;
+            var selectElement = document.getElementById("sel");
+            for(i = 0; i < names.length; i++) {
+                opt = new Option(names[i]);
+                selectElement.options.add(opt);;
+            }
+            selectElement.onchange = display;
+        }
+
+        //Function displays the phone number of the person chosen
+        function display() {
+            var index = document.getElementById("sel").selectedIndex;
+            var result = document.getElementById("result");
+            if (index > 0) {
+                result.innerHTML = names[index] + ": phone number " + numbers[index];
+            }
+            else {
+                result.innerHTML = ""; //empty
+            }
+        }
+
+        window.onload = init;
+    </script>
+</head>
+
+<body>
+
+<h1>Phone book, version 2</h1>
+
+<select id="sel"></select>
+
+<p id="result"></p>
+
+</body>
+</html>

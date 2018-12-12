@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ass 3.3</title>
+<h1> Power of x </h1>
+
+    <style>
+        h1 {
+            color: aquamarine;
+        }
+        table, th, td
+        {
+            border: 1px solid black;
+        }
+        td, th {
+            padding-right:20px;
+            padding-left:20px;
+        }
+        th {
+            background-color: silver;
+        }
+        label {
+            width: 180px;
+            margin: 5px;
+            display: inline-block;
+        }
+    </style>
+
+    <script>
+
+function tableValues() {
+var lowLim, upLim,result,a,b,c;
+var step = 0;
+
+lowLim = Number(document.getElementById("lowLimit").value);
+upLim = Number(document.getElementById("upLimit").value);
+step = Number(document.getElementById("step").value);
+var i = lowLim;
+result = "<table><tr><th> x </th><th> x<sup>2 </sup></th><th> x<sup>3</sup> </th></tr>";
+
+while (i <= upLim){
+a = i;
+b = i*i;
+c = Math.pow(i,3);
+
+result+=   "<tr><td>" + a + "</td><td>" + b + "</td><td>" + c + "</td></tr>";
+
+i+= step;
+
+}
+
+result+= "</table>";
+document.getElementById("result").innerHTML = result;
+
+
+
+}
+    </script>
+</head>
+<body>
+    <label> Lower limit: </label>  <input id="lowLimit" type="text" > <p>
+    <label> Upper Limit: </label>  <input id ="upLimit" type="text"> <p>
+    <label>Step: </label>  <input id="step" type="text"> <p>
+
+<input type="button" value="Display" onclick="tableValues()">
+<p id="result"></p>
+
+</body>
+</html>

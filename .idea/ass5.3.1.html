@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ass5.3.1</title>
+
+    <script>
+        var width = [];
+        var length = [];
+        var count1 =0;
+        var count2=0;
+
+        function insert() {
+            width[count1] = Number(document.getElementById("width").value);
+            length[count2] = Number(document.getElementById("length").value);
+            count1++;
+            count2++;
+
+            document.getElementById("result1").innerHTML = "The widths: " + width;
+            document.getElementById("result2").innerHTML = "The lengths: " + length;
+           // document.getElementById("result3").innerHTML ="";
+        }
+
+         function display(){
+            var i,j, result = "<table><tr><th>Width</th> <th>Length</th> <th> Area </th> </tr>"
+
+            for (i=0;i<width.length;i++) {
+              //  for (j = 0; j < length.length; j++) {
+                    result += "<tr><td>" + width[i] + "</td><td>" + length[i] + "</td><td>" + width[i] * length[i] + "</td></tr>";
+
+               //}
+            }
+
+                result+= "</table>";
+                document.getElementById("result3").innerHTML = result;
+
+
+            }
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+Width: <input id="width" type="text">
+Length: <input id="length" type="text">
+<input type="button" value="insert" onclick="insert()">
+<input type="button" value="display" onclick="display()">
+
+<p></p>
+<p id="result1" ></p>
+<p id="result2"></p>
+<p id="result3"></p>
+</body>
+</html>

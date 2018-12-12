@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ass 4.2</title>
+    <script>
+
+        function ass() {
+            var a;
+
+            a = Math.round(Math.random());
+
+            document.getElementById("a").innerHTML = a;
+
+        }
+
+        function flipCoin() {
+
+            var t,p1,p2,num,i;
+            var sum1=0;
+            var sum2=0;
+            var count1=0;
+            var count2=0;
+            var result1="";
+            var result2="";
+            var output1="";
+            var output2="";
+
+
+            t = Number(prompt("How many times? "));
+
+            document.getElementById("time").innerHTML = "time: " + t;
+
+            for (i = 1; i<=t;i=i+1){
+                num = Math.round(Math.random());
+                if (num == 0){
+                    count1++;
+                   // sum1+=count1;
+                   // output1+= count1 + "<br>";
+
+
+
+                }
+
+                else {
+                    count2++;
+                   // sum2+=count2;
+                    //output2+= count2 + "<br>";
+
+
+                }
+            }
+
+
+            p1= (count1)/(t)*100;
+            p2= (count2)/(t)*100;
+
+            result1 += "Sum of head: " + count1;
+            result2 += "Sum of tail: " + count2;
+
+           // document.getElementById("o1").innerHTML = "output1 ne: "+ output1;
+            //document.getElementById("o2").innerHTML = "output2 ne: "+ output2;
+            document.getElementById("sum1").innerHTML = result1;
+            document.getElementById("sum2").innerHTML = result2;
+            document.getElementById("percentage1").innerHTML="Percent head: " + p1.toFixed(2) + "%";
+            document.getElementById("percentage2").innerHTML= "Percent tail: " +p2.toFixed(2) + "%";
+
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="flip" onclick="flipCoin()">
+<p id="time"></p>
+
+<p id="sum1"></p>
+<p id="sum2"></p>
+<p id="percentage1"></p>
+<p id="percentage2"></p>
+
+<input type="button" value="dm" onclick="ass()">
+<p id="a"></p>
+</body>
+</html>

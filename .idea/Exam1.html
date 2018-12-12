@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>exxam1</title>
+
+    <script>
+        function ticketMachine(){
+            var zone,change;
+            var sumOfMoney = 0;
+            var resultOfMoney ="";
+            var money;
+
+
+            zone = Number(prompt("Input the zone: "));
+
+           if (zone == 1) {
+
+               document.getElementById("zone").innerHTML = "Zone "+ zone +" price 9";
+
+               while (sumOfMoney < 9){
+                   money = Number(prompt("Give money"));
+                   sumOfMoney+= money;
+                   resultOfMoney+="<br>" + "You gave " + money;
+                   document.getElementById("money").innerHTML = resultOfMoney;
+                //  money = Number(prompt("Give money"));
+
+
+               }
+
+               change = sumOfMoney-9;
+               document.getElementById("change").innerHTML = "Thank you! You get back " + change;
+
+
+           }
+         else   if (zone == 2) {
+               document.getElementById("zone").innerHTML = "Zone "+ zone +" price 14";
+
+               while (sumOfMoney < 14) {
+                   money = Number(prompt("Give money"));
+                   sumOfMoney += money;
+                   resultOfMoney += "<br>" + "You gave " + money;
+                   document.getElementById("money").innerHTML = resultOfMoney;
+                 // money = Number(prompt("Give money"));
+
+
+               }
+
+               change = sumOfMoney - 14;
+               document.getElementById("change").innerHTML = "Thank you! You get back " + change;
+           }
+
+         else   if (zone == 3) {
+               document.getElementById("zone").innerHTML = "Zone "+ zone +" price 18";
+
+               while (sumOfMoney < 18) {
+                   money = Number(prompt("Give money"));
+                   sumOfMoney += money;
+                   resultOfMoney += "<br>" + "You gave " + money;
+                   document.getElementById("money").innerHTML = resultOfMoney;
+                 // money = Number(prompt("Give money"));
+
+
+               }
+
+               change = sumOfMoney - 18;
+               document.getElementById("change").innerHTML = "Thank you! You get back " + change;
+           }
+        }
+    </script>
+</head>
+<body>
+<h1> Ticket machine </h1>
+<input type="button" value="Buy ticket" onclick="ticketMachine()">
+<p id="zone"></p>
+<p id="money"></p>
+<p id="change"></p>
+</body>
+</html>

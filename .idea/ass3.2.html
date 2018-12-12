@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ass3.2</title>
+
+    <script>
+
+        function sumofNums() {
+
+            var sum = 0;
+            var num;
+            var output ="";
+            var output1 ="";
+
+           // num = Number(prompt("input the number (<100)"));
+
+
+            while (sum <100){
+
+                num = Number(prompt("input the number "+ sum));
+
+
+                sum += num;
+
+                output += num + "<br>";
+                output1 +=sum +"<br>";
+
+                document.getElementById("a").innerHTML = output;
+
+                document.getElementById("result").innerHTML=output1;
+
+                //document.getElementById("result").innerHTML = output;
+                //num = Number(prompt("input the number "+ sum));
+
+            }
+
+            //document.getElementById("a").innerHTML = output;
+            output1 = output1 + "sum is " + sum + "<br>";
+            document.getElementById("result").innerHTML = output1;
+        }
+    </script>
+</head>
+<body>
+
+<input type="button" value="Go" onclick="sumofNums()">
+<p id="a"></p>
+
+<p id="result"></p>
+
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ass5.1.4</title>
+    <script>
+        var num,n;
+        var count=1;
+        var result="";
+
+        n = Math.floor(Math.random() * 100) + 1;
+
+
+        function guessingGame() {
+            num = Number(document.getElementById("num").value);
+
+            if ((count<7) || (num !=n)){
+                if (num<n){
+                    document.getElementById("result").innerHTML = "smaller than the right number" ;
+                    count++;
+                }
+                 if (num>n){
+                    document.getElementById("result").innerHTML = "bigger than the right number";
+                    count++;
+                }
+            }
+
+            if( (count == 7)||(num==n)) {
+                result+="<br>"+ n;
+                document.getElementById("result").innerHTML = "The right number: " + n;
+            }
+
+            if ((count > 7) || (num == n)){
+                result+="<br>"+ n;
+                document.getElementById("result").innerHTML = "The right number: " + n;
+            }
+
+        }
+    </script>
+</head>
+<body>
+Number input: <input type="text" id="num"
+                     onkeypress="if (event.keyCode == 13) guessingGame();">
+
+<p id="result"></p>
+</body>
+</html>
